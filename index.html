@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My eBookshelf - Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="login-container">
+        <h1>Enter Password to Access</h1>
+        <input type="password" id="password" placeholder="Enter password">
+        <button onclick="checkPassword()">Submit</button>
+        <p id="error-message"></p>
+    </div>
+
+    <div id="bookshelf-container">
+        <header>
+            <h1>My eBookshelf</h1>
+        </header>
+        <main>
+            <section id="bookshelf">
+                <h2>Available eBooks</h2>
+                <ul id="book-list">
+                    <li><a href="pdfs/book1.pdf" target="_blank">Book 1</a></li>
+                    <li><a href="pdfs/book2.pdf" target="_blank">Book 2</a></li>
+                    <li><a href="pdfs/book3.pdf" target="_blank">Book 3</a></li>
+                </ul>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 My eBookshelf</p>
+        </footer>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const passwordInput = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+            const correctPassword = 'yehyehyeh';  // Replace with your password
+
+            if (passwordInput === correctPassword) {
+                document.getElementById('login-container').style.display = 'none';
+                document.getElementById('bookshelf-container').style.display = 'block';
+            } else {
+                errorMessage.textContent = 'Incorrect password, please try again.';
+            }
+        }
+    </script>
+</body>
+</html>
